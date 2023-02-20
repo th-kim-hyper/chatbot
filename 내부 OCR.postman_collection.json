@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "ce2f7490-ab3b-4fed-8413-2ddefc04a280",
+		"name": "내부 OCR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21268938"
+	},
+	"item": [
+		{
+			"name": "monitor",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_key",
+							"value": "{{api_key}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/sdk/monitor",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"sdk",
+						"monitor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_key",
+							"value": "{{api_key}}",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "upload",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/yesic/OneDrive/사진/외국인등록증.png"
+						},
+						{
+							"key": "textout",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "recog_form",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "extract_table",
+							"value": "true",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{baseURL}}/sdk/ocr",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"sdk",
+						"ocr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "monitor proxy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_key",
+							"value": "{{api_key}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://192.168.20.52:12001/sdk/monitor",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"20",
+						"52"
+					],
+					"port": "12001",
+					"path": [
+						"sdk",
+						"monitor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "form down",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "api_key",
+							"value": "{{api_key}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local_ocr}}/sdk/monitor",
+					"host": [
+						"{{local_ocr}}"
+					],
+					"path": [
+						"sdk",
+						"monitor"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://192.168.50.98:62975",
+			"type": "string"
+		},
+		{
+			"key": "api_key",
+			"value": "SNOCR-3de238b328cf4bde9a73e6adc693918b",
+			"type": "string"
+		}
+	]
+}
